@@ -200,10 +200,12 @@ void setup(void)
   logfile.println("millis,time,light,temp");    
 #if ECHO_TO_SERIAL
   Serial.println("millis,time,light,temp");
+#endif
 #if ECHO_TO_SERIAL  // attempt to write out the header to the file
   if (logfile.writeError || !logfile.sync()) {
     error("write header");
   }
+#endif
   
   pinMode(redLEDpin, OUTPUT);
   pinMode(greenLEDpin, OUTPUT);
